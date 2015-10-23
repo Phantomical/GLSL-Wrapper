@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2013 for Windows Desktop
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlslShaderGenerator", "GlslShaderGenerator\GlslShaderGenerator.csproj", "{06777F65-F280-4C10-8F39-DDFEA8A611A5}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wrapper", "wrapper\wrapper.vcxproj", "{CB651C9F-D556-4999-B0F0-651CFAA5AAA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaderCompiler", "ShaderCompiler\ShaderCompiler.csproj", "{59C6A297-08FD-4CFF-AD43-480C3485CF5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,16 +17,6 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{06777F65-F280-4C10-8F39-DDFEA8A611A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06777F65-F280-4C10-8F39-DDFEA8A611A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06777F65-F280-4C10-8F39-DDFEA8A611A5}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{06777F65-F280-4C10-8F39-DDFEA8A611A5}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{06777F65-F280-4C10-8F39-DDFEA8A611A5}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{06777F65-F280-4C10-8F39-DDFEA8A611A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06777F65-F280-4C10-8F39-DDFEA8A611A5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{06777F65-F280-4C10-8F39-DDFEA8A611A5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{06777F65-F280-4C10-8F39-DDFEA8A611A5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{06777F65-F280-4C10-8F39-DDFEA8A611A5}.Release|Win32.ActiveCfg = Release|Any CPU
 		{CB651C9F-D556-4999-B0F0-651CFAA5AAA9}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{CB651C9F-D556-4999-B0F0-651CFAA5AAA9}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
 		{CB651C9F-D556-4999-B0F0-651CFAA5AAA9}.Debug|Mixed Platforms.Build.0 = Debug|Win32
@@ -37,6 +27,16 @@ Global
 		{CB651C9F-D556-4999-B0F0-651CFAA5AAA9}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{CB651C9F-D556-4999-B0F0-651CFAA5AAA9}.Release|Win32.ActiveCfg = Release|Win32
 		{CB651C9F-D556-4999-B0F0-651CFAA5AAA9}.Release|Win32.Build.0 = Release|Win32
+		{59C6A297-08FD-4CFF-AD43-480C3485CF5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59C6A297-08FD-4CFF-AD43-480C3485CF5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59C6A297-08FD-4CFF-AD43-480C3485CF5B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{59C6A297-08FD-4CFF-AD43-480C3485CF5B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{59C6A297-08FD-4CFF-AD43-480C3485CF5B}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{59C6A297-08FD-4CFF-AD43-480C3485CF5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59C6A297-08FD-4CFF-AD43-480C3485CF5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59C6A297-08FD-4CFF-AD43-480C3485CF5B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{59C6A297-08FD-4CFF-AD43-480C3485CF5B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{59C6A297-08FD-4CFF-AD43-480C3485CF5B}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

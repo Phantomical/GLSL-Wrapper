@@ -58,7 +58,7 @@ namespace ShaderCompiler
 
 		/*
 		 * Arguments
-		 *	- out=[filename] : Sets the output file (The default is __Shader[random identifier(Only changes if the arguments change)])
+		 *	- out=[filename] : Sets the output file (The default is 'shader_file.h')
 		 *	- name=[string] : Sets the name of the shader (This will be the name of the output class)
 		 *	- [filename] : One of the files to compile as a shader stage (The stage of the shader is inferred from the extension)
 		 *	- vert=[filename] : Compiles the file as a vertex shader
@@ -77,6 +77,7 @@ namespace ShaderCompiler
 			Info.Stages = new List<StageItem>();
 			Info.Namespace = "Shaders";
 			Info.ShaderName = "__Shader" + args.GetHashCode();
+			Info.OutputFile = "shader_file.h";
 
 			foreach (string arg in args)
 			{
@@ -211,6 +212,10 @@ namespace ShaderCompiler
 				.ToArray();
 
 		}
+		static string StripPeriods(string str)
+		{
+			return Regex.Replace(str, ".", "");
+		}
 
 		struct ArgInfo
 		{
@@ -343,7 +348,7 @@ namespace ShaderCompiler
 
 			if(LinkStatus == 0)
 			{
-				Console.WriteLine("Shader failed to link. Info lof: \n" + InfoLog);
+				Console.WriteLine("Shader failed to link. Info log: \n" + InfoLog);
 				return false;
 			}
 
@@ -423,12 +428,12 @@ namespace ShaderCompiler
 
 			foreach (var attrib in Attributes)
 			{
-				Lines.Add("\t\tstatic GLint id_attrib_" + attrib.Item2 + " = -1;");
+				Lines.Add("\t\tstatic GLint id_attrib_" + StripPeriods(attrib.Item2) + " = -1;");
 			}
 
 			foreach (var uniform in Uniforms)
 			{
-				Lines.Add("\t\tstatic GLint id_uniform_" + uniform.Item2 + " = -1;");
+				Lines.Add("\t\tstatic GLint id_uniform_" + StripPeriods(uniform.Item2) + " = -1;");
 			}
 
 			Lines.Add("\t};");
@@ -481,12 +486,12 @@ namespace ShaderCompiler
 			{
 				foreach (var attrib in Attributes)
 				{
-					Lines.Add("\t\t\tid_attrib_" + attrib.Item2 + " = glGetAttribLocation(program_id, \"" + attrib.Item2 + "\");");
+					Lines.Add("\t\t\tid_attrib_" + StripPeriods(attrib.Item2) + " = glGetAttribLocation(program_id, \"" + attrib.Item2 + "\");");
 				}
 
 				foreach (var uniform in Uniforms)
 				{
-					Lines.Add("\t\t\tid_uniform_" + uniform.Item2 + " = glGetUniformLocation(program_id, \"" + uniform.Item2 + "\");");
+					Lines.Add("\t\t\tid_uniform_" + StripPeriods(uniform.Item2) + " = glGetUniformLocation(program_id, \"" + uniform.Item2 + "\");");
 				}
 			}
 
@@ -526,7 +531,7 @@ namespace ShaderCompiler
 						Lines.Add("\t\t\telse if(name == \"" + uniform.Item2 + "\")");
 					}
 
-					Lines.Add("\t\t\t\treturn id_uniform_" + uniform.Item2 + ";");
+					Lines.Add("\t\t\t\treturn id_uniform_" + StripPeriods(uniform.Item2) + ";");
 				}
 			}
 
@@ -551,7 +556,7 @@ namespace ShaderCompiler
 						Lines.Add("\t\t\telse if(name == \"" + attrib.Item2 + "\")");
 					}
 
-					Lines.Add("\t\t\t\treturn id_attrib_" + attrib.Item2 + ";");
+					Lines.Add("\t\t\t\treturn id_attrib_" + StripPeriods(attrib.Item2) + ";");
 				}
 			}
 
