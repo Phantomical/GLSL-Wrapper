@@ -302,7 +302,7 @@ namespace ShaderCompiler
 
 				if(IsCompute && stage.Item2 != ShaderStage.Compute)
 				{
-					Console.WriteLine("Error: Compute shaders cannot be compiled with other shader types");
+					Console.WriteLine("Error GL004: Compute shaders cannot be compiled with other shader types");
 					return false;
 				}
 
@@ -318,7 +318,7 @@ namespace ShaderCompiler
 
 				if(CompileStatus == 0)
 				{
-					Console.WriteLine("Error while compiling shader. Info Log: \n" + Regex.Replace(GL.GetShaderInfoLog(id), "0\\(", stage.Item1 + "("));
+					Console.WriteLine("Error GL002: Error while compiling shader. Info Log: \n" + Regex.Replace(GL.GetShaderInfoLog(id), "0\\(", stage.Item1 + "("));
 					Failed = true;
 				}
 
@@ -326,11 +326,13 @@ namespace ShaderCompiler
 			}
 
 			if (Info.Stages.Count == 0)
+			{
 				return false;
+			}
 
 			if(Failed)
 			{
-				Console.WriteLine("Shader failed to compile. Exiting.");
+				Console.WriteLine("Error GL001: Shader failed to compile. Exiting.");
 				return false;
 			}
 
@@ -348,7 +350,7 @@ namespace ShaderCompiler
 
 			if(LinkStatus == 0)
 			{
-				Console.WriteLine("Shader failed to link. Info log: \n" + InfoLog);
+				Console.WriteLine("Error GL003: Shader failed to link. Info log: \n" + InfoLog);
 				return false;
 			}
 
@@ -643,8 +645,7 @@ namespace ShaderCompiler
 			}
 			catch(Exception e)
 			{
-				Console.WriteLine("An exception occured: " + e.Message);
-				Console.WriteLine("The program will now exit.");
+				Console.WriteLine("Error GL000: Internal compiler error: " + e.Message);
 			}
 		}
 	}
