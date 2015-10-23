@@ -437,7 +437,7 @@ namespace GlslShaderGenerator
 
 			Lines.Add("");
 
-			Lines.Add("\tclass " + Info.ShaderName + " : public ::glsl_lib::shader, _" + Info.ShaderName + "_statics<void>");
+			Lines.Add("\tclass " + Info.ShaderName + " : public ::glsl_wrapper::shader, _" + Info.ShaderName + "_statics<void>");
 			Lines.Add("\t{");
 			Lines.Add("\tprivate:");
 
@@ -587,7 +587,7 @@ namespace GlslShaderGenerator
 
 			#region non virtual
 			Lines.Add("\t\t" + Info.ShaderName + "() :");
-			Lines.Add("\t\t\tuniform_func(::glsl_lib::_detail::empty_function) {  }");
+			Lines.Add("\t\t\tuniform_func(::glsl_wrapper::_detail::empty_function) {  }");
 			Lines.Add("\t\t" + Info.ShaderName + "(std::function<void()> func) :");
 			Lines.Add("\t\t\tuniform_func(func) {  }");
 

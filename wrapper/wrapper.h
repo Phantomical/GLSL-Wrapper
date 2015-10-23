@@ -4,10 +4,10 @@
 #include <string>
 
 #ifdef _MSC_VER
-#	pragma comment(lib, "GLSLLib.lib")
+#	pragma comment(lib, "wrapper.lib")
 #endif
 
-namespace glsl_lib
+namespace glsl_wrapper
 {
 	typedef unsigned int GLuint;
 	typedef int GLint;

@@ -1,6 +1,10 @@
-#include "glsl_lib.h"
+#include "wrapper.h"
 
-#include "GL\glew.h"
+#ifndef GL_INCLUDE_FILE
+#	define GL_INCLUDE_FILE "GL\glew.h"
+#endif
+
+#include GL_INCLUDE_FILE
 
 #define TRANSPOSE GL_FALSE
 
@@ -24,11 +28,9 @@
 	MAT_UNIFORM0(4, 2, prefix, mat_p) \
 	MAT_UNIFORM0(4, 3, prefix, mat_p) 
 
-namespace glsl_lib
+namespace glsl_wrapper
 {
 	const std::string shader::mvp_name = std::string("MVP");
-
-
 
 	namespace _detail
 	{
