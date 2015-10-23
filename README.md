@@ -2,6 +2,7 @@
 A compiler and runtime for glsl shader abstraction.
 
 ## Compiler Arguments
+~~~~
  - out=[file] : This option sets the output file. (The default is 'shader_file.h' in the current directory)
  - name=[identifier] : This option sets the name of the output shader class. (The default is '__Shader[random number]')
  - [file] : Lists a file to be compiled as one of the shader stages. (The stage is inferred from the file extension, if the stage cannot be inferred then the argument will be ignored)
@@ -11,3 +12,6 @@ A compiler and runtime for glsl shader abstraction.
  - tessEval=[file] : Compiles the file as a tesselation evaluation shader stage.
  - tessControl=[file] : Compiles the file as a tesselation control shader stage.
  - compute=[file] : Compiles the file as a compute shader. (This argument cannot be specified with any other stage types)
+~~~~
+
+All shader stages except for compute shaders can be specified multiple times. However, there can only be only one `main` method per stage.
