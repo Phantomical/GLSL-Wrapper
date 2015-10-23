@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("GlslShaderGenerator")]
+[assembly: AssemblyTitle("ShaderCompiler")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GlslShaderGenerator")]
+[assembly: AssemblyProduct("ShaderCompiler")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0645aa37-9ad4-4c2d-997a-dd9efe8de02f")]
+[assembly: Guid("4cb0e1d3-1df4-4ba9-af09-5d486ec22510")]
 
 // Version information for an assembly consists of the following four values:
 //

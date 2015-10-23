@@ -10,7 +10,7 @@ using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
 
-namespace GlslShaderGenerator
+namespace ShaderCompiler
 {
 	using StageItem = Tuple<string, Program.ShaderStage, string>;
 	using UniformItem = Tuple<ActiveUniformType, string>;
