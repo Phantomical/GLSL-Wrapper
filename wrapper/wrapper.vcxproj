@@ -14,6 +14,7 @@
     <ClCompile Include="wrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GL\glew.h" />
     <ClInclude Include="wrapper.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
